@@ -1,6 +1,6 @@
 html {
     font-size: 10px;
-    color: #4e4d4d;
+    color: #4556b9;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
@@ -8,7 +8,7 @@ html {
 main {
     max-width: 50rem;
     margin: 2rem auto;
-    background: linear-gradient(30deg,#3dc0c0, #5bceae);
+    background: linear-gradient(30deg,#4a916a, #52d895);
     padding: 3rem 1.6rem 6rem 1.6rem;
     border-radius: 4rem;
     box-shadow: 2px 4px 5px lightgray;
