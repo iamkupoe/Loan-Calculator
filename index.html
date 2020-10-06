@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Loan Calculator</title>
+</head>
+<body>
+    <main id="container">
+        <h3>Loan Calculator</h3>
+
+        <section>
+            <div class="bill"> 
+                <label for="yourBill">Loan Amount</label>
+                <input type="number" placeholder="Your Loan" id="yourBill" />
+            </div>
+             
+            <div>
+                <div class="space-between">
+                    <label for="tipInput">Rate</label>
+                    <span id="tipPercent">0%</span>
+                </div>
+                <input type="range" value="0" id="tipInput" class="range" />
+            </div>
+            <div class="space-between">
+                <span>Interest</span>
+                <span id="tipValue"></span>
+            </div>
+            <hr>
+            <div class="space-between total">
+                <span>Total</span>
+                <span id="totalWithTip"></span>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <div class="space-between">
+                    <label for="splitInput">Number of Months</label>
+                    <span id="splitValue"></span>
+                </div>   
+                <input type="range" min="1" max="10" value="1" id="splitInput" class="range" />
+            </div>
+            <div class="space-between">
+                <span>Repayment Per Month</span>
+                <span id="billEach"></span>
+            </div>
+            <div class="space-between">
+                <span>Interest Per Month</span>
+                <span id="tipEach"></span>
+            </div>
+              
+            
+        </section>
+    </main>
+
+    <script>
+      function update() {
+          let bill = Number(document.getElementById("yourBill").value)
+          let tipPercent = document.getElementById("tipInput").value;
+          let split = document.getElementById("splitInput").value;
+          
+          let tipValue = bill * (tipPercent / 100);
+          let tipEach = tipValue / split;
+          let newBillEach = (bill + tipValue) / split;
+          
+          document.getElementById("tipPercent").innerHTML = tipPercent;
+          document.getElementById("tipValue").innerHTML = tipValue;
+          document.getElementById('totalWithTip').innerHTML = bill + tipValue;
+          document.getElementById('splitValue').innerHTML = split;
+          document.getElementById('billEach').innerHTML = newBillEach;
+          document.getElementById('tipEach').innerHTML = tipEach;
+      }
+
+      let container = document.getElementById("container");
+      container.addEventListener("input", update);
+
+    </script>
+</body>
+</html>
