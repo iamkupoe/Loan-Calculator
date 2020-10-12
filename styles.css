@@ -110,4 +110,10 @@ input[type="number"] {
     margin-left: 30%;
 }
 
+#note {
+    text-align: center;
+    color: red;
+    font-size: 2rem;
+}
+
 
