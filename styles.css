@@ -99,4 +99,15 @@ input[type="number"] {
     border: 0;
 }
 
+#marquee {
+    color: #4556b9;
+    font-size: 8rem;
+}
+
+.footer {
+    align-content: center;
+    font-size: 10rem;
+    margin-left: 30%;
+}
+
 

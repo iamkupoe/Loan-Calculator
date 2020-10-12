@@ -41,7 +41,7 @@
                     <label for="splitInput">Number of Months</label>
                     <span id="splitValue"></span>
                 </div>   
-                <input type="range" min="1" max="12" value="1" id="splitInput" class="range" />
+                <input type="range" min="1" max="60" value="1" id="splitInput" class="range" />
             </div>
             <div class="space-between">
                 <span>Repayment Per Month</span>
@@ -76,7 +76,7 @@
           let tipValue = bill * (tipPercent / 100);
           let tipEach = tipValue / split;
           let newBillEach = (bill + tipValue) / split;
-          
+        
           document.getElementById("tipPercent").innerHTML = tipPercent + "%";
           document.getElementById("tipValue").innerHTML = formatMoney(tipValue);
           document.getElementById('totalWithTip').innerHTML = formatMoney(bill + tipValue);
@@ -89,5 +89,17 @@
       container.addEventListener("input", update);
 
     </script>
+
+    <marquee id="marquee">
+        <strong>
+            Dear applicant, ..Make good use of this loan and pay back in time!! Thank you!!
+        </strong>
+    </marquee>
+
+    <div className="footer">
+        <strong>
+            Powered by <a href="http://samuelk.netlify.app" blank="" >iamkupoe</a>
+        </strong> 
+    </div>
 </body>
 </html>
